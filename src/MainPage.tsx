@@ -3,7 +3,7 @@ import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card";
 import { SiUpwork } from "react-icons/si";
 import { LuCitrus } from "react-icons/lu";
-import Hero from "./Hero/Hero";
+import About from "./About/About";
 
 
 const MainPage = () => {
@@ -20,24 +20,29 @@ const MainPage = () => {
           });
         }
       };
+    
 
   return (
-    <div className="flex flex-col relative bg-zinc-900 app-font items-center overflow-hidden pt-28 ">
-        <div className="fixed top-0 z-[2] items-center bg-zinc-950 rounded-bl-md rounded-br-md shadow-sm shadow-zinc-800 p-3 px-5 flex justify-between md:w-[90%] w-full mx-auto ">
+    <div onScroll={(e) => {
+        let target = e.target as HTMLElement
+        console.log(target.scrollTop);
+        
+    }} className="flex flex-col relative bg-zinc-900 app-font items-center overflow-hidden pt-28 ">
+        <div className="fixed top-0 z-[2] items-center bg-zinc-950 rounded-bl-md rounded-br-md shadow-sm shadow-zinc-950 p-1 px-5 flex justify-between w-full mx-auto ">
             <LuCitrus className="text-2xl text-yellow-400" />
 
             <div className="flex  items-center gap-2 r p-2">
-                <button onClick={() => handleScroll("home")} className="text-white border-b border-b-zinc-700 pb-1 px-3">Home</button>
-                <a href="#about" className="text-zinc-400  border-b-zinc-700 pb-1 px-3">About</a>
-                <button className="text-zinc-400  border-b-zinc-700 pb-1 px-3">Work</button>
-                <button className="text-zinc-400  border-b-zinc-700 pb-1 px-3">Reviews</button>
+                <button onClick={() => handleScroll("home")} className=" border rounded-md border-zinc-700 py-1 px-3 text-cyan-400">About</button>
+                <button className="text-zinc-400  border-b-zinc-700 py-1 px-3">Work</button>
+                <button className="text-zinc-400  border-b-zinc-700 py-1 px-3">Reviews</button>
+                <button className="text-zinc-400  border-b-zinc-700 py-1 px-3">Contact</button>
             </div>
-            <div className="items-start gap-4 md:block hidden">
-                <button className="text-zinc-800 bg-white px-2 py-1 rounded-lg active:bg-zinc-300 transition-all ">Contact me</button>
+            {/* <div className="items-start gap-4 md:block hidden">
+                <div className="text-zinc-950 bg-zinc-950 px-2 py-1 rounded-lg transition-all "></div>
                 
-            </div>
+            </div> */}
         </div>
-        <Hero />
+        <About />
         {/* <Hero /> */}
 
     </div>
