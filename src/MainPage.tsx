@@ -41,24 +41,30 @@ const MainPage = () => {
     
 
   return (
-    <div className="flex flex-col bg-zinc-900 app-font items-center  w-full  md:pt-0 ">
-        {/* <div className="flex flex-col md:w-3/4 gap-20 w-full relative text-white min-h-screen overflow-y-scroll">
-          <About onIsInView={() => setCurrentView("About")} />
-          <Work onIsInView={() => setCurrentView("Work")} />
-        </div> */}
-        <div className="fixed top-0 z-[2] items-center bg-zinc-950 rounded-bl-md rounded-br-md shadow-sm shadow-zinc-900 p-5 px-5 flex justify-between w-full sm:w-[90vw] sm:mx-auto ">
-            <LuCitrus className="text-2xl text-yellow-400" />
+    <div className="flex flex-col bg-zinc-900 app-font items-center w-full  md:pt-0">
+      {/* <div className="flex flex-col md:w-3/4 gap-20 w-full relative text-white min-h-screen overflow-y-scroll">
+        <About onIsInView={() => setCurrentView("About")} />
+        <Work onIsInView={() => setCurrentView("Work")} />
+      </div> */}
+      <div className="fixed top-0 z-[2] items-center bg-zinc-950 rounded-bl-md rounded-br-md shadow-sm shadow-zinc-900 p-5 px-5 flex justify-between w-full sm:w-[90vw] sm:mx-auto ">
+          <LuCitrus className="text-2xl text-yellow-400" />
 
-            <div className="flex  items-center gap-2 r p-2">
-                <button onClick={() => handleScroll("About")} className={`${currentView == "About" ?  " rounded-md  text-cyan-400" : "text-zinc-400"}  py-1 px-3 `}>About</button>
-                <button onClick={() => handleScroll("Work")} className={`${currentView == "Work" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Work</button>
-                <button onClick={() => handleScroll("Reviews")} className={`${currentView == "Reviews" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Reviews</button>
-                <button onClick={() => handleScroll("Contact")} className={`${currentView == "Contact" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Contact</button>
-            </div>
-        </div>
+          <div className="flex  items-center gap-2 r p-2">
+              <button onClick={() => handleScroll("About")} className={`${currentView == "About" ?  " rounded-md  text-cyan-400" : "text-zinc-400"}  py-1 px-3 `}>About</button>
+              <button onClick={() => handleScroll("Work")} className={`${currentView == "Work" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Work</button>
+              <button onClick={() => handleScroll("Reviews")} className={`${currentView == "Reviews" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Reviews</button>
+              <button onClick={() => handleScroll("Contact")} className={`${currentView == "Contact" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Contact</button>
+          </div>
+      </div>
+      <div className="flex flex-col flex-1 min-h-screen overflow-auto">
         <About onIsInView={() => setCurrentView("About")}  />
         <Work onIsInView={() => setCurrentView("Work")} />
 
+      </div>
+
+      <footer className="w-full h-10 bg-black mt-20">
+
+      </footer>
     </div>
   );
 };

@@ -18,7 +18,8 @@ section {
 }
 body {
   background-color: #18181b;
-
+  overflow-y: auto;
+  min-height: 100vh;
 }
 
 @layer base {

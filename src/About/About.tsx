@@ -29,9 +29,9 @@ const About = ({onIsInView}: {onIsInView: () => void}) => {
     }, [containerInView])
 
   return (
-        <motion.div id="About"  className="flex flex-col w-full md:w-[80%] mx-auto p-5 min-h-screen mt-28 gap-48">
-            <div ref={containerRef}  className="flex flex-col  md:flex-row w-full mx-auto gap-20">
-                <div className="flex flex-col items-start md:w-3/4 w-full px-8">
+        <motion.div id="About"  className="flex flex-col w-full md:w-[80%] mx-auto p-5 min-h-screen mt-32 gap-48">
+            <div ref={containerRef}  className="flex flex-col  md:flex-row w-full mx-auto gap-20 min-h-screen">
+                <div className="flex flex-col items-start md:w-3/4 w-full sm:px-8">
                     <div className="flex items-center gap-2">
                         <img className='shadow-md shadow-neutral-700 w-12 h-12 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/anonymous-boy-icon-cartoon-style-vector.jpg?alt=media&token=e24c3ef2-6b93-42dc-aadd-c7b0a3ca2f82" />
                         <div className="w-2 h-2 bg-green-400 rounded-full ml-2"></div>
@@ -90,7 +90,7 @@ const About = ({onIsInView}: {onIsInView: () => void}) => {
             </div>  
             <motion.div
                 ref={ref} 
-                className="flex flex-col sm:w-[90%] w-full gap-7 p-8 justify-start text-white sm:p-0 mb-40"
+                className="flex flex-col sm:w-[90%] w-full gap-7 md:p-8 justify-start text-white sm:p-0 min-h-[100vh]"
                 initial={{ opacity: 0, y: 50 }}  // Start hidden and slightly below
                 animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
                 transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
@@ -101,7 +101,7 @@ const About = ({onIsInView}: {onIsInView: () => void}) => {
                     {/* <Divider /> */}
 
                 </div>
-                <div className="flex items-center sm:gap-2 gap-5 flex-wrap">
+                <div className="md:flex items-center grid grid-cols-2 sm:gap-2 gap-5 flex-wrap">
                     <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-2 sm:w-60 w-full">
                         <img src={reactLogo} alt='react-logo' className='w-10 h-10' />
                         <div className="flex flex-col ">
