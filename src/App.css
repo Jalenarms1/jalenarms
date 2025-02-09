@@ -13,11 +13,13 @@ html {
   
 }
 section {
-  height: 100vh;
+  min-height: 100vh;
+  /* max-height: 100vh; */
+
   /* scroll-snap-align: start; */
 }
 body {
-  background-color: #18181b;
+  background-color: #09090b;
   overflow-y: auto;
   min-height: 100vh;
 }
