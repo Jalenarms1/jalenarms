@@ -14,10 +14,11 @@ html {
 }
 section {
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 body {
-  background-color: black;
+  background-color: #18181b;
+
 }
 
 @layer base {
