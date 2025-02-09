@@ -22,7 +22,7 @@ const TechnologiesAndSkills = () => {
   return (
     <motion.div
         ref={ref} 
-        className="flex flex-col w-full md:w-[80%] mx-auto gap-7  justify-start text-white sm:p-0   mb-20"
+        className="flex flex-col w-full md:w-[80%] mx-auto gap-7  justify-start text-white sm:p-0   mb-20 md:mt-0 mt-20"
         initial={{ opacity: 0, y: 50 }}  // Start hidden and slightly below
         animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
         transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition

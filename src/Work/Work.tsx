@@ -21,7 +21,7 @@ const Work = ({onIsInView}: {onIsInView: () => void}) => {
   }, [containerInView])
 
   return (
-    <motion.section initial={{opacity: 0, y: 50}} animate={containerInView ? { opacity: 1, y: 0 } : {}} transition={{duration: 0.8, ease: "easeOut"}} id="Work" ref={containerRef}  className="flex flex-col justify-start max-w-[100vw] md:w-[80%] mx-auto sm:gap-10 md:gap-20 gap-10">
+    <motion.section initial={{opacity: 0, y: 50}} animate={containerInView ? { opacity: 1, y: 0 } : {}} transition={{duration: 0.8, ease: "easeOut"}} id="Work" ref={containerRef}  className="flex flex-col justify-start max-w-[100vw] md:w-[80%] mx-auto sm:gap-10 md:gap-10 gap-10">
       <div className="flex flex-col gap-2">
         <p className="text-3xl text-white font-semibold">Work</p>
       </div>

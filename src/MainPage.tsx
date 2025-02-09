@@ -71,7 +71,7 @@ const MainPage = () => {
 
       </div>
 
-      <footer className="w-full bg-zinc-800 mt-20 z-[2]  rounded-tl-md rounded-tr-md shadow-sm shadow-zinc-900 p-10 px-5 grid grid-cols-6 sm:w-[90vw] sm:mx-auto ">
+      <footer className="w-full bg-zinc-800 mt-20 z-[2]  rounded-tl-md rounded-tr-md shadow-sm shadow-zinc-900 p-10 px-5 grid sm:grid-cols-8 grid-cols-1 md:gap-0 gap-10 sm:w-[90vw] sm:mx-auto ">
         <div className="flex flex-col items-start gap-2 col-span-2">
           <img className='shadow-md shadow-neutral-700 w-8 h-8 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/anonymous-boy-icon-cartoon-style-vector.jpg?alt=media&token=e24c3ef2-6b93-42dc-aadd-c7b0a3ca2f82" />
           <div className="flex flex-col">
@@ -95,11 +95,19 @@ const MainPage = () => {
         <div className="flex flex-col gap-5 col-span-2">
           <p className="text-sm text-white">Links</p>
           <div className="flex flex-col gap-2">
-            <p className="text-sm text-zinc-300">About</p>
-            <p className="text-sm text-zinc-300">Work</p>
-            <p className="text-sm text-zinc-300">Reviews</p>
-            <p className="text-sm text-zinc-300">Contact</p>
+            <p onClick={() => handleScroll("About")} className="text-sm text-zinc-300 active:underline">About</p>
+            <p onClick={() => handleScroll("Work")} className="text-sm text-zinc-300 active:underline ">Work</p>
+            <p onClick={() => handleScroll("Reviews")} className="text-sm text-zinc-300 active:underline">Reviews</p>
+            <p onClick={() => handleScroll("Contact")} className="text-sm text-zinc-300 active:underline">Contact</p>
 
+
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-5 col-span-2">
+          <p className="text-sm text-white">Resume</p>
+          <div className="flex flex-col gap-2">
+            <p className="text-sm text-zinc-300">Download CV</p>
 
           </div>
         </div>
