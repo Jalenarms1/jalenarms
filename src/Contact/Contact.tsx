@@ -32,6 +32,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
   }
 
   const handleSubmit = async () => {
+    setError(null)
     if (contactForm.name.length < 1) { setError("Please enter a name.") }
 
     if (contactForm.message.length < 1) { setError("Please enter a message.") }
