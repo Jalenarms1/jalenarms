@@ -48,7 +48,7 @@ export function Sidebar({updateView, currentView}: {updateView: (AppView) => voi
       };
   return (
     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-      <SheetTrigger asChild>
+      <SheetTrigger asChild className="md:hidden">
         <RiMenu4Fill onClick={() => setIsSheetOpen(true)} className="text-white text-2xl" />
         
       </SheetTrigger>
