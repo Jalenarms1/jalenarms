@@ -14,7 +14,7 @@ const Reviews = () => {
 }
 
   return (
-    <motion.div  initial={{opacity: 0, y: 50}} animate={{ opacity: 1, y: 0 }} transition={{duration: 0.8, ease: "easeOut"}} id="Reviews"  className="flex flex-col justify-start max-w-[100vw] lg:w-[75%] md:w-[80%]  mx-auto sm:gap-10 md:gap-10 gap-10 py-20">
+    <motion.div  initial={{opacity: 0, y: 50}} animate={{ opacity: 1, y: 0 }} transition={{duration: 0.8, ease: "easeOut"}} id="Reviews"  className="flex flex-col justify-start max-w-[100vw] lg:w-[75%] sm:w-[80%]  mx-auto sm:gap-10 md:gap-10 gap-10 py-20">
         <div className="flex items-center justify-between md:px-0 px-5">
             <div className="flex items-center gap-3">
                 <p className="text-3xl text-white font-semibold">Reviews</p>
@@ -28,9 +28,9 @@ const Reviews = () => {
               align: "start",
               loop: true
             }}
-            className="w-full "
+            className="w-full shadow-inner shadow-black"
         >
-        <CarouselContent className="mr-4 ml-0">
+        <CarouselContent className="mr-4 ml-0 ">
             <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-3 flex flex-col justify-between h-80 md:h-60 border border-zinc-800 rounded-md bg-zinc-800">
                     <div className="flex flex-col gap-3">

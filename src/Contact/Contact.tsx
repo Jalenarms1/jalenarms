@@ -14,7 +14,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
   }, [containerInView])
 
   return (
-    <motion.div ref={containerRef} initial={{opacity: 0, y: 50}} animate={containerInView ? { opacity: 1, y: 0 } : {}} transition={{duration: 0.8, ease: "easeOut"}} id="Contact"  className="flex flex-col justify-start max-w-[100vw] lg:w-[75%] md:w-[80%] mx-auto sm:gap-10 md:gap-10 gap-10 pt-20 md:p-0 p-5 md:h-[75vh] min-h-screen">
+    <motion.div ref={containerRef} initial={{opacity: 0, y: 50}} animate={containerInView ? { opacity: 1, y: 0 } : {}} transition={{duration: 0.8, ease: "easeOut"}} id="Contact"  className="flex flex-col justify-start max-w-[100vw] lg:w-[75%] sm:w-[80%] mx-auto sm:gap-10 md:gap-10 gap-10 md:pt-20 md:p-0 p-5 md:h-[75vh] min-h-screen">
         <div className="flex items-start gap-10 md:flex-row flex-col">
             <div className="flex flex-col w-full md:w-[60%] gap-10">
                 <div className="flex items-center justify-between">
@@ -24,7 +24,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-6">
-                    <div className="flex items-center  gap-10">
+                    <div className="flex items-center  md:gap-10 gap-2">
                         <div className="flex flex-col gap-2 w-full">
                             <p className='text-zinc-300'>Name</p>
                             <Input type='text' className=' border-zinc-700 bg-zinc-200 text-black' />

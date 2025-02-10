@@ -13,8 +13,10 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import {motion} from "framer-motion"
 import Reviews from "./Reviews/Reviews";
 import Contact from "./Contact/Contact";
+import { Sidebar } from "./Sidebar";
+import { downloadResume } from "./utils";
 
-type AppView = "About" | "Work" | "Reviews" | "Contact"
+export type AppView = "About" | "Work" | "Reviews" | "Contact"
 
 const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/Jalen%20Arms%20-%20Resume%202025.pdf?alt=media&token=a4cfc56f-84e5-481c-87bb-16f42dc88f31"
 
@@ -53,16 +55,7 @@ const MainPage = () => {
       setCurrentView(id);
     };
 
-    const downloadResume = async () => {
-      const link = document.createElement("a");
-      link.href = "/src/assets/Jalen Arms - Resume 2025.pdf";
-      link.download = "Jalen Arms - Resume 2025.pdf"; // Suggested filename
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild
-      
-      
-    }
+    
 
     useEffect(() => {
       if (isInView) {
@@ -89,16 +82,17 @@ const MainPage = () => {
       <div className="fixed top-0 z-[2] items-center bg-zinc-950 rounded-bl-md rounded-br-md shadow-sm shadow-zinc-900 p-5 px-5 flex justify-between w-full sm:w-[90vw] sm:mx-auto ">
           <LuCitrus className="text-2xl text-yellow-400" />
 
-          <div className="flex  items-center gap-2 r p-2">
+          <div className="sm:flex hidden  items-center gap-2 r p-2 ">
               <button onClick={() => handleScroll("About")} className={`${currentView == "About" ?  " rounded-md  text-cyan-400" : "text-zinc-400"}  py-1 px-3 `}>About</button>
               <button onClick={() => handleScroll("Work")} className={`${currentView == "Work" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Work</button>
               {/* <button onClick={() => handleScroll("Reviews")} className={`${currentView == "Reviews" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Reviews</button> */}
               <button onClick={() => handleScroll("Contact")} className={`${currentView == "Contact" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Contact</button>
               <button onClick={() => handleScroll("Contact")} className={`py-1 px-3`}>Download CV</button>
           </div>
+          <Sidebar updateView={(view) => setCurrentView(view)} currentView={currentView} />
       </div>
       <div className="flex flex-col flex-1 min-h-screen overflow-hidden p-5">
-        <div ref={ref} className="h-10 w-full"></div>
+        <div ref={ref} className="md:h-10 w-full"></div>
         <About onIsInView={() => setCurrentView("About")} onDownloadResume={downloadResume}  />
         <TechnologiesAndSkills onIsInView={() => setCurrentView("Work")} />
         <div ref={workRef} className="h-20 w-full"></div>

@@ -28,7 +28,7 @@ const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
   return (
     <motion.div
         ref={containerRef} 
-        className="flex flex-col w-full lg:w-[75%] md:w-[80%] mx-auto gap-7  justify-start text-white sm:p-0  md:mt-0 "
+        className="flex flex-col w-full lg:w-[75%] sm:w-[80%] mx-auto gap-7  justify-start text-white sm:p-0  md:mt-0 "
         initial={{ opacity: 0, y: 50 }}  // Start hidden and slightly below
         animate={containerInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
         transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
