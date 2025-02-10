@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Divider from '@/Shared/Divider';
 import reactLogo from "../assets/react.svg"
 import goLogo from "../assets/go.png"
@@ -15,16 +15,22 @@ import nextjs from "../assets/nextjs.png"
 import { motion, useInView } from "framer-motion"
 
 
-const TechnologiesAndSkills = () => {
+const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false })
+    const containerRef = useRef(null)
+    const containerInView = useInView(containerRef, { once: false })
+
+    useEffect(() => {
+        if (containerInView) { onIsInView() }
+    }, [containerInView])
 
   return (
     <motion.div
-        ref={ref} 
+        ref={containerRef} 
         className="flex flex-col w-full md:w-[80%] mx-auto gap-7  justify-start text-white sm:p-0   mb-20 md:mt-0 mt-20"
         initial={{ opacity: 0, y: 50 }}  // Start hidden and slightly below
-        animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
+        animate={containerInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
         transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
     >
         <div className="flex flex-col">

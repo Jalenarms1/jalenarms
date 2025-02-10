@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "./components/ui/button";
-import { Card } from "./components/ui/card";
+import { Card, CardContent } from "./components/ui/card";
 import { SiUpwork } from "react-icons/si";
 import { LuCitrus } from "react-icons/lu";
 import About from "./About/About";
@@ -9,13 +9,19 @@ import Work from "./Work/Work";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import TechnologiesAndSkills from "./About/TechnologiesAndSkills";
 import { useInView } from "framer-motion";
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel";
+import {motion} from "framer-motion"
+import Reviews from "./Reviews/Reviews";
 
 type AppView = "About" | "Work" | "Reviews" | "Contact"
+
+const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/Jalen%20Arms%20-%20Resume%202025.pdf?alt=media&token=a4cfc56f-84e5-481c-87bb-16f42dc88f31"
 
 const MainPage = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false })
+    const workRef = useRef(null);
+    const workIsInView = useInView(ref, { once: false })
 
     const [currentView, setCurrentView] = useState<AppView>("About")
 
@@ -44,11 +50,28 @@ const MainPage = () => {
       setCurrentView(id);
     };
 
+    const downloadResume = async () => {
+      const link = document.createElement("a");
+      link.href = "/src/assets/Jalen Arms - Resume 2025.pdf";
+      link.download = "Jalen Arms - Resume 2025.pdf"; // Suggested filename
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild
+      
+      
+    }
+
     useEffect(() => {
       if (isInView) {
         setCurrentView("About")
       }
     }, [isInView])
+
+    // useEffect(() => {
+    //   if (workIsInView) {
+    //     setCurrentView("Work")
+    //   }
+    // }, [workIsInView])
     
 
   return (
@@ -63,15 +86,17 @@ const MainPage = () => {
               <button onClick={() => handleScroll("Contact")} className={`${currentView == "Contact" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Contact</button>
           </div>
       </div>
-      <div className="flex flex-col flex-1 min-h-screen overflow-hidden p-5 ">
+      <div className="flex flex-col flex-1 min-h-screen overflow-hidden p-5">
         <div ref={ref} className="h-32 w-full"></div>
-        <About onIsInView={() => setCurrentView("About")}  />
-        <TechnologiesAndSkills />
+        <About onIsInView={() => setCurrentView("About")} onDownloadResume={downloadResume}  />
+        <TechnologiesAndSkills onIsInView={() => setCurrentView("Work")} />
+        <div ref={workRef} className="h-20 w-full"></div>
         <Work onIsInView={() => setCurrentView("Work")} />
 
+        <Reviews onIsInView={() => setCurrentView("Reviews")} />
       </div>
 
-      <footer className="w-full bg-zinc-800 mt-20 z-[2]  rounded-tl-md rounded-tr-md shadow-sm shadow-zinc-900 p-10 px-5 grid sm:grid-cols-8 grid-cols-1 md:gap-0 gap-10 sm:w-[90vw] sm:mx-auto ">
+      <footer className="w-full bg-zinc-800 mt-20 z-[2]  rounded-tl-md rounded-tr-md shadow-sm shadow-zinc-900 p-10 px-5 md:px-10 grid sm:grid-cols-8 grid-cols-1 md:gap-0 gap-10 sm:w-[90vw] sm:mx-auto ">
         <div className="flex flex-col items-start gap-2 col-span-2">
           <img className='shadow-md shadow-neutral-700 w-8 h-8 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/anonymous-boy-icon-cartoon-style-vector.jpg?alt=media&token=e24c3ef2-6b93-42dc-aadd-c7b0a3ca2f82" />
           <div className="flex flex-col">
@@ -107,7 +132,7 @@ const MainPage = () => {
         <div className="flex flex-col gap-5 col-span-2">
           <p className="text-sm text-white">Resume</p>
           <div className="flex flex-col gap-2">
-            <p className="text-sm text-zinc-300">Download CV</p>
+            <p onClick={downloadResume} className="text-sm text-zinc-300 active:underline">Download CV</p>
 
           </div>
         </div>

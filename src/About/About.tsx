@@ -6,15 +6,19 @@ import { CiCalendar } from "react-icons/ci";
 import { motion, useInView } from "framer-motion"
 
 
-const About = ({onIsInView}: {onIsInView: () => void}) => {
+const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownloadResume: () => void}) => {
     
 
     const containerRef = useRef(null)
     const containerInView = useInView(containerRef, { once: false })
 
-    useEffect(() => {
-        if (containerInView) { onIsInView() }
-    }, [containerInView])
+    // useEffect(() => {
+    //     if (containerInView) { onIsInView() }
+    // }, [containerInView])
+
+    const goToUrl = (url: string) => {
+        window.open(url, "_blank")
+    }
 
   return (
         <motion.div id="About"  className="flex flex-col w-full md:w-[80%] mx-auto  gap-28 md:gap-0 ">
@@ -33,11 +37,11 @@ const About = ({onIsInView}: {onIsInView: () => void}) => {
                     <p className="text-zinc-300 mt-5 font-light">Schedule a meeting to discuss my skills and experience in more detail. I look forward to connecting with you soon!</p>
 
                     <div className="flex items-center mt-5 gap-2">
-                        <button className=' bg-yellow-400 active:bg-yellow-500 rounded-lg text-black font-semibold p-2 px-4 flex items-center gap-2'>
+                        <a href='https://calendly.com/dev-test-jalen' target='_blank' className=' bg-yellow-400 active:bg-yellow-500 rounded-lg text-black font-semibold p-2 px-4 flex items-center gap-2'>
                             <CiCalendar />
                             <p>Schedule</p>
-                            </button>
-                        <button className=' border border-zinc-400 active:bg-zinc-800 rounded-lg  font-semibold p-2 px-4 flex items-center gap-2 text-zinc-400'>
+                        </a>
+                        <button onClick={onDownloadResume} className=' border border-zinc-400 active:bg-zinc-800 rounded-lg  font-semibold p-2 px-4 flex items-center gap-2 text-zinc-400'>
                             <FaFileArrowDown />
                             <p>Download CV</p>
                         </button>
@@ -48,13 +52,16 @@ const About = ({onIsInView}: {onIsInView: () => void}) => {
                     <div className="flex w-full justify-between items-center">
                         <div className="flex items-start gap-3">
                             <div className="flex items-center gap-2 cursor-pointer">
-                                <FaGithub className='text-4xl text-white active:text-neutral-400 cursor-pointer' />
+                                {/* https://github.com/jalenarms1 */}
+                                <FaGithub onClick={() => goToUrl("https://github.com/jalenarms1")} className='text-4xl text-white active:text-neutral-400 cursor-pointer' />
                             </div>
                             <div className="flex items-center gap-2">
-                                <FaLinkedin className='text-4xl text-blue-500 active:text-blue-600 cursor-pointer' />
+                                {/* https://linkedin.com/in/jalen-arms-38304a241 */}
+                                <FaLinkedin onClick={() => goToUrl("https://linkedin.com/in/jalen-arms-38304a241")} className='text-4xl text-blue-500 active:text-blue-600 cursor-pointer' />
                             </div>
                             <div className="flex items-center gap-2">
-                                <SiUpwork className='text-4xl text-green-500 active:text-green-600 cursor-pointer' />
+                                {/* https://www.upwork.com/freelancers/~01cd6b779e11f90eb8?mp_source=share */}
+                                <SiUpwork onClick={() => goToUrl("https://www.upwork.com/freelancers/~01cd6b779e11f90eb8?mp_source=share")} className='text-4xl text-green-500 active:text-green-600 cursor-pointer' />
                             </div>
                         </div>
                         
