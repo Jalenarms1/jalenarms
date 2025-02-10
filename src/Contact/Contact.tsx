@@ -68,6 +68,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
                     <div className="flex flex-col gap-3">
                         <p className="text-3xl text-white font-semibold">Contact</p>
                         <p className='text-sm text-zinc-300'>I look forward to hearing from you!</p>
+                        {error && <p className='text-sm text-red-400'>{error}</p>}
                     </div>
                 </div>
                 <div className="flex flex-col gap-6">
