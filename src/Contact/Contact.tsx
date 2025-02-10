@@ -53,6 +53,8 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
         const json = await resp.json()
 
         console.log(json);
+
+        setContactForm({} as ContactForm)
         
     } catch (error) {
         console.log(error);
