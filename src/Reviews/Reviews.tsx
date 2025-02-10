@@ -7,20 +7,14 @@ import { FaStar } from "react-icons/fa";
 import { SiUpwork } from "react-icons/si";
 
 
-const Reviews = ({onIsInView}: {onIsInView: () => void}) => {
-  const containerRef = useRef(null)
-  const containerInView = useInView(containerRef, { once: false })
-
-  useEffect(() => {
-      if (containerInView) { onIsInView() }
-  }, [containerInView])
+const Reviews = () => {
 
   const goToUrl = (url: string) => {
     window.open(url, "_blank")
 }
 
   return (
-    <motion.section ref={containerRef} initial={{opacity: 0, y: 50}} animate={containerInView ? { opacity: 1, y: 0 } : {}} transition={{duration: 0.8, ease: "easeOut"}} id="Reviews"  className="flex flex-col justify-start max-w-[100vw] md:w-[80%] mx-auto sm:gap-10 md:gap-10 gap-10 mt-20">
+    <motion.div  initial={{opacity: 0, y: 50}} animate={{ opacity: 1, y: 0 }} transition={{duration: 0.8, ease: "easeOut"}} id="Reviews"  className="flex flex-col justify-start max-w-[100vw] lg:w-[75%] md:w-[80%] mx-auto sm:gap-10 md:gap-10 gap-10 pt-20">
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
                 <p className="text-3xl text-white font-semibold">Reviews</p>
@@ -34,7 +28,7 @@ const Reviews = ({onIsInView}: {onIsInView: () => void}) => {
               align: "start",
               loop: true
             }}
-            className="w-[75vw] mx-auto"
+            className="w-full"
         >
         <CarouselContent>
             <CarouselItem className="md:basis-1/2 lg:basis-1/2">
@@ -159,7 +153,7 @@ const Reviews = ({onIsInView}: {onIsInView: () => void}) => {
         <CarouselPrevious />
         <CarouselNext />
         </Carousel>
-    </motion.section>
+    </motion.div>
   )
 }
 

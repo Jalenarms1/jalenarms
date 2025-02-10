@@ -12,6 +12,7 @@ import { useInView } from "framer-motion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel";
 import {motion} from "framer-motion"
 import Reviews from "./Reviews/Reviews";
+import Contact from "./Contact/Contact";
 
 type AppView = "About" | "Work" | "Reviews" | "Contact"
 
@@ -21,7 +22,9 @@ const MainPage = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false })
     const workRef = useRef(null);
-    const workIsInView = useInView(ref, { once: false })
+    const workIsInView = useInView(workRef, { once: false })
+    const contactRef = useRef(null);
+    const contactIsInView = useInView(contactRef, { once: false })
 
     const [currentView, setCurrentView] = useState<AppView>("About")
 
@@ -67,11 +70,18 @@ const MainPage = () => {
       }
     }, [isInView])
 
-    // useEffect(() => {
-    //   if (workIsInView) {
-    //     setCurrentView("Work")
-    //   }
-    // }, [workIsInView])
+    useEffect(() => {
+      if (workIsInView) {
+        setCurrentView("Work")
+      }
+    }, [workIsInView])
+
+    useEffect(() => {
+      if (contactIsInView) {
+        setCurrentView("Contact")
+      }
+    }, [contactIsInView])
+
     
 
   return (
@@ -82,19 +92,22 @@ const MainPage = () => {
           <div className="flex  items-center gap-2 r p-2">
               <button onClick={() => handleScroll("About")} className={`${currentView == "About" ?  " rounded-md  text-cyan-400" : "text-zinc-400"}  py-1 px-3 `}>About</button>
               <button onClick={() => handleScroll("Work")} className={`${currentView == "Work" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Work</button>
-              <button onClick={() => handleScroll("Reviews")} className={`${currentView == "Reviews" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Reviews</button>
+              {/* <button onClick={() => handleScroll("Reviews")} className={`${currentView == "Reviews" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Reviews</button> */}
               <button onClick={() => handleScroll("Contact")} className={`${currentView == "Contact" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Contact</button>
+              <button onClick={() => handleScroll("Contact")} className={`py-1 px-3`}>Download CV</button>
           </div>
       </div>
       <div className="flex flex-col flex-1 min-h-screen overflow-hidden p-5">
-        <div ref={ref} className="h-32 w-full"></div>
+        <div ref={ref} className="h-10 w-full"></div>
         <About onIsInView={() => setCurrentView("About")} onDownloadResume={downloadResume}  />
         <TechnologiesAndSkills onIsInView={() => setCurrentView("Work")} />
         <div ref={workRef} className="h-20 w-full"></div>
         <Work onIsInView={() => setCurrentView("Work")} />
 
-        <Reviews onIsInView={() => setCurrentView("Reviews")} />
       </div>
+      <Reviews />
+      <Contact onIsInView={() => setCurrentView("Contact")} />
+      <div ref={contactRef} className="h-20 w-full"></div>
 
       <footer className="w-full bg-zinc-800 mt-20 z-[2]  rounded-tl-md rounded-tr-md shadow-sm shadow-zinc-900 p-10 px-5 md:px-10 grid sm:grid-cols-8 grid-cols-1 md:gap-0 gap-10 sm:w-[90vw] sm:mx-auto ">
         <div className="flex flex-col items-start gap-2 col-span-2">

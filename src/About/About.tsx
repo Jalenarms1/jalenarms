@@ -21,8 +21,8 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
     }
 
   return (
-        <motion.div id="About"  className="flex flex-col w-full md:w-[80%] mx-auto  gap-28 md:gap-0 ">
-            <div ref={containerRef}  className="flex flex-col  md:flex-row w-full mx-auto gap-20 min-h-screen">
+        <motion.div id="About"  className="flex flex-col w-full lg:w-[75%] md:w-[80%] mx-auto  gap-28 md:gap-0 ">
+            <div ref={containerRef}  className="flex flex-col justify-center md:flex-row md:items-center w-full mx-auto gap-20 min-h-screen max-h-screen">
                 <div className="flex flex-col items-start md:w-3/4 w-full sm:px-8">
                     <div className="flex items-center gap-2">
                         <img className='shadow-md shadow-neutral-700 w-12 h-12 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/anonymous-boy-icon-cartoon-style-vector.jpg?alt=media&token=e24c3ef2-6b93-42dc-aadd-c7b0a3ca2f82" />
