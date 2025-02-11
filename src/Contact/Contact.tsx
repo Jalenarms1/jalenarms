@@ -33,11 +33,11 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
 
   const handleSubmit = async () => {
     setError(null)
-    if (contactForm.name.length < 1) { setError("Please enter a name.") }
+    if (contactForm.name.length < 1) setError("Please enter a name.")
 
-    if (contactForm.message.length < 1) { setError("Please enter a message.") }
+    if (contactForm.message.length < 1) setError("Please enter a message.")
 
-    if (!isValidEmail(contactForm.email)) { setError("Please enter a valid email.") }
+    if (!isValidEmail(contactForm.email)) setError("Please enter a valid email.") 
 
     try {
         const resp = await fetch(import.meta.env.VITE_CONTACT_FORM_ENDPOINT, {
