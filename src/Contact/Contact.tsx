@@ -3,6 +3,8 @@ import {motion, useInView} from "framer-motion"
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { BsPersonFill } from "react-icons/bs";
+import { FaCircleCheck } from "react-icons/fa6";
+
 
 interface ContactForm {
     name: string,
@@ -15,6 +17,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
   const containerRef = useRef(null)
   const containerInView = useInView(containerRef, { once: false })
   const [error, setError] = useState<string | null>(null)
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false)
 
   useEffect(() => {
       if (containerInView) { onIsInView() }
@@ -42,7 +45,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
         setError("Please enter a valid email.")
         return
     } 
-    
+
     if (contactForm?.message.length < 1) {
         setError("Please enter a message.")
         return
@@ -61,11 +64,10 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
             })
         })
 
-        const json = await resp.json()
+        console.log(resp.status);
 
-        console.log(json);
-
-        setContactForm({} as ContactForm)
+        setFormSubmitted(true)
+        setContactForm({name: "", email: "", message: ""})
         
     } catch (error) {
         console.log(error);
@@ -73,10 +75,11 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
     }
   }
 
+
   return (
     <motion.div ref={containerRef} initial={{opacity: 0, y: 50}} animate={containerInView ? { opacity: 1, y: 0 } : {}} transition={{duration: 0.8, ease: "easeOut"}} id="Contact"  className="flex flex-col justify-start max-w-[100vw] lg:w-[75%] sm:w-[80%] mx-auto sm:gap-10 md:gap-10 gap-10 md:pt-20 md:p-0 p-5 md:h-[75vh] min-h-screen">
         <div className="flex items-start gap-10 md:flex-row flex-col">
-            <div className="flex flex-col w-full md:w-[60%] gap-5">
+            {!formSubmitted ? <div className="flex flex-col w-full md:w-[60%] gap-5">
                 <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-3">
                         <p className="text-3xl text-white font-semibold">Contact</p>
@@ -106,7 +109,13 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
 
                 </div>
 
-            </div>
+            </div> : (
+                <div className="flex fade-in flex-col h-full w-full md:w-[60%] gap-10 justify-center items-center">
+                    <FaCircleCheck className='text-6xl text-green-400' />
+                    <p className="text-green-400 text-4xl">Submitted</p>
+                </div>
+
+            )}
 
             <div className="md:w-[1px] md:h-full h-[0.5px] w-full bg-zinc-700"></div>
 

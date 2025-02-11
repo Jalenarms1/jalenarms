@@ -95,4 +95,20 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%}
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+.fade-in {
+  animation: fade-in forwards 0.7s ease-in-out;
+}
 
