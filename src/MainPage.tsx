@@ -107,7 +107,7 @@ const MainPage = () => {
         <div className="flex flex-col items-start gap-2 col-span-2">
           <img className='shadow-md shadow-neutral-700 w-8 h-8 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/anonymous-boy-icon-cartoon-style-vector.jpg?alt=media&token=e24c3ef2-6b93-42dc-aadd-c7b0a3ca2f82" />
           <div className="flex flex-col">
-            <p className="text-base text-zinc-400 font-semibold">Jalen Arms</p>
+            <p className="text-base text-zinc-400 font-semibold">Jalen Arms - Jalenarms@outlook.com</p>
             <p className="text-white text-sm mt-1">Fullstack</p>
             <p className="text-cyan-400 text-sm">Software Developer</p>
           </div>

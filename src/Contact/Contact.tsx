@@ -83,7 +83,9 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
                 <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-3">
                         <p className="text-3xl text-white font-semibold">Contact</p>
-                        <p className='text-sm text-zinc-300'>I look forward to hearing from you!</p>
+                        <div className="flex flex-col text-zinc-300">
+                            <a href='mailto:jalenarms@outlook.com' className='text-cyan-400'>jalenarms@outlook.com</a>
+                        </div>
                         {error && <p className='text-sm text-red-400'>{error}</p>}
                     </div>
                 </div>
