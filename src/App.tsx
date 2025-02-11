@@ -10,6 +10,10 @@ import MainPage from './MainPage';
 
 function App() {
 
+  useEffect(() => {
+    document.title = "Jalen Arms - Portfolio"
+  })
+
   return (
     <>
      {/* <Hero /> */}
