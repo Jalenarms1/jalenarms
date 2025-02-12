@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     document.title = "Jalen Arms - Portfolio"
-  })
+  }, [])
 
   return (
     <>
