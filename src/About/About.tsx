@@ -17,6 +17,7 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
     // }, [containerInView])
 
     const goToUrl = (url: string) => {
+        
         window.open(url, "_blank")
     }
 
@@ -25,7 +26,7 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
             <div ref={containerRef}  className="flex flex-col justify-center md:flex-row md:items-center w-full mx-auto gap-20 min-h-screen max-h-screen">
                 <div className="flex flex-col items-start md:w-3/4 w-full sm:px-8">
                     <div className="flex items-center gap-2">
-                        <img className='shadow-md shadow-neutral-700 w-12 h-12 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/anonymous-boy-icon-cartoon-style-vector.jpg?alt=media&token=e24c3ef2-6b93-42dc-aadd-c7b0a3ca2f82" />
+                        <img className='shadow-md shadow-neutral-700 w-12 h-12 mb-2 rounded-full hover:shadow-lg hover:shadow-neutral-600 cursor-pointer' src="https://res.cloudinary.com/dvlhy87zl/image/upload/v1740701265/izkyiatioadtuhyzlj4s.png" />
                         <div className="w-2 h-2 bg-green-400 rounded-full ml-2"></div>
                         <p className="text-zinc-400">Available</p>
                     </div>
