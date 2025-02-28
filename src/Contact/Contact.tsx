@@ -89,27 +89,7 @@ const Contact = ({onIsInView}: {onIsInView: () => void}) => {
                         {error && <p className='text-sm text-red-400'>{error}</p>}
                     </div>
                 </div>
-                <div className="flex flex-col gap-6">
-                    <div className="flex items-center  md:gap-10 gap-2">
-                        <div className="flex flex-col gap-2 w-full">
-                            <p className='text-zinc-300'>Name</p>
-                            <Input name='name' value={contactForm.name} onChange={handleContactFormUpdate} type='text' className=' border-zinc-700 bg-zinc-200 text-black' />
-                        </div>
-                        <div className="flex flex-col gap-2 w-full">
-                            <p className='text-zinc-300'>Email</p>
-                            <Input name='email' value={contactForm.email} onChange={handleContactFormUpdate} type='email' className='text-black  border-zinc-700 bg-zinc-200' />
-                        </div>
-
-                    </div>
-                    <div className="flex flex-col gap-2 w-full">
-                        <p className='text-zinc-300'>Message</p>
-                        <Textarea value={contactForm.message} onChange={handleContactFormUpdate} name='message' rows={50} className='w-full h-20 bg-zinc-200 text-black' />
-                    </div>
-                    <div className="w-full flex justify-end ">
-                        <button onClick={handleSubmit} className='px-6 py-2 bg-yellow-400 active:bg-yellow-500 text-black rounded-md'>Submit</button>
-                    </div>
-
-                </div>
+                
 
             </div> : (
                 <div className="flex fade-in flex-col h-full w-full md:w-[60%] gap-10 justify-center items-center">
