@@ -4,7 +4,7 @@ import { SiUpwork } from 'react-icons/si'
 import { FaFileArrowDown } from "react-icons/fa6";
 import { CiCalendar } from "react-icons/ci";
 import { motion, useInView } from "framer-motion"
-
+import appsImg from "../assets/apps.png"
 
 const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownloadResume: () => void}) => {
     
@@ -69,11 +69,8 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
                     </div>
                 </div>
                 <div className="w-72 md:mx-0 mx-auto md:block hidden">
-                    {/* https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/Simulator%20Screenshot%20-%20iPhone%2016%20-%202024-12-28%20at%2009.48.18.png?alt=media&token=862ef46c-2dfd-475b-8cb8-72539a50a982 */}
-                    {/* https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/updated-iconsize.png?alt=media&token=479437fa-5102-4499-9356-908c51d79893 */}
-                    {/* https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/Simulator%20Screenshot%20-%20iPhone%2016%20-%202025-01-27%20at%2021.43.07.png?alt=media&token=3daab2c6-645c-4d88-938a-35a7ba51a28c */}
                     <motion.img 
-                        src="https://firebasestorage.googleapis.com/v0/b/silly-socks-e0923.firebasestorage.app/o/Simulator%20Screenshot%20-%20iPhone%2016%20-%202025-01-27%20at%2021.43.07.png?alt=media&token=3daab2c6-645c-4d88-938a-35a7ba51a28c" 
+                        src={appsImg} 
                         alt="ios-img" 
                         className=" object-contain rounded-3xl border border-zinc-800 shadow-lg shadow-black"
                         initial={{ rotateY: 270, opacity: 1 }}

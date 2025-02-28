@@ -210,7 +210,6 @@ const Work = ({onIsInView}: {onIsInView: () => void}) => {
         </div>
       </div>
 
-
     </motion.div>
   )
 }
