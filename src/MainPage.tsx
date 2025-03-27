@@ -87,7 +87,7 @@ const MainPage = () => {
               <button onClick={() => handleScroll("Work")} className={`${currentView == "Work" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Work</button>
               {/* <button onClick={() => handleScroll("Reviews")} className={`${currentView == "Reviews" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Reviews</button> */}
               <button onClick={() => handleScroll("Contact")} className={`${currentView == "Contact" ?  " rounded-md  text-cyan-400" : "text-zinc-400"} py-1 px-3`}>Contact</button>
-              <button onClick={() => handleScroll("Contact")} className={`py-1 px-3`}>Download CV</button>
+              <button onClick={() => downloadResume()} className={`py-1 px-3`}>Download CV</button>
           </div>
           <Sidebar updateView={(view) => setCurrentView(view)} currentView={currentView} />
       </div>
@@ -138,7 +138,7 @@ const MainPage = () => {
 
         <div className="flex flex-col gap-5 col-span-2">
           <p className="text-sm text-white">Resume</p>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 cursor-pointer">
             <p onClick={downloadResume} className="text-sm text-zinc-300 active:underline">Download CV</p>
 
           </div>
