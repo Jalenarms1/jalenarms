@@ -115,7 +115,7 @@ const Work = ({onIsInView}: {onIsInView: () => void}) => {
       </div>
 
       <div className="md:grid md:grid-cols-12 flex flex-col items-start md:gap-10 gap-2 ">
-        <p className='text-zinc-400 text-sm col-span-2'>2024 - 2025</p>
+        <p className='text-zinc-400 text-sm col-span-2'>2024 - Current</p>
         <div className="flex flex-col col-span-10">
           <div className="flex md:flex-row flex-col md:items-center md:gap-2">
             <p className='font-semibold text-white text-xl'>HotSpot</p>
