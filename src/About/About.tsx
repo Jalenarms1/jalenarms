@@ -5,6 +5,7 @@ import { FaFileArrowDown } from "react-icons/fa6";
 import { CiCalendar } from "react-icons/ci";
 import { motion, useInView } from "framer-motion"
 import appsImg from "../assets/apps.png"
+import { downloadResume } from '@/utils';
 
 const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownloadResume: () => void}) => {
     
@@ -42,7 +43,7 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
                             <CiCalendar />
                             <p>Schedule</p>
                         </a>
-                        <button onClick={onDownloadResume} className=' border border-zinc-400 active:bg-zinc-800 rounded-lg  font-semibold p-2 px-4 flex items-center gap-2 text-zinc-400'>
+                        <button onClick={downloadResume} className=' border border-zinc-400 active:bg-zinc-800 rounded-lg  font-semibold p-2 px-4 flex items-center gap-2 text-zinc-400'>
                             <FaFileArrowDown />
                             <p>Download CV</p>
                         </button>
