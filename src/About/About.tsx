@@ -34,7 +34,7 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
 
                     <p className="md:text-4xl lg:text-5xl xl:text-6xl text-3xl font-semibold text-white">Fullstack</p>
                     <p className="text-cyan-400 md:text-4xl lg:text-5xl xl:text-6xl text-3xl font-semibold">Software Developer</p>
-                    <p className="text-zinc-300 mt-5 font-light">Hi, I’m Jalen Arms—a software developer who loves building intuitive, high-performance software. From web apps, backend systems to automation tools, CLI applications and database-driven software, I have a broad array of knowledge and I like to take on a wide range of projects.</p>
+                    <p className="text-zinc-300 mt-5 font-light">Hi, I’m Jalen Arms—a software developer who loves building robust, high-performance software. From web apps, backend systems to automation tools, CLI applications and database-driven software, I have a broad array of knowledge and I like to take on a wide range of projects.</p>
 
                     <p className="text-zinc-300 mt-5 font-light">Schedule a meeting to discuss my skills and experience in more detail. I look forward to connecting with you soon!</p>
 
