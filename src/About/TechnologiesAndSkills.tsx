@@ -47,14 +47,6 @@ const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
                     <p className='text-xs text-zinc-400'>3+ years</p>
                 </div>
             </div>
-            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
-                <img src={nextjs} alt='react-logo' className='w-8 object-contain h-8' />
-                <div className="flex flex-col ">
-                    <p>Next.js</p>
-                    <p className='text-xs text-zinc-400'>2+ years</p>
-                </div>
-            </div>
-
             <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-2 sm:w-60 w-full">
                 <img src={goLogo} alt='react-logo' className='w-12 h-10' />
                 <div className="flex flex-col ">
@@ -62,6 +54,14 @@ const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
                     <p className='text-xs text-zinc-400'>2+ years</p>
                 </div>
             </div>
+            {/* <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
+                <img src={nextjs} alt='react-logo' className='w-8 object-contain h-8' />
+                <div className="flex flex-col ">
+                    <p>Next.js</p>
+                    <p className='text-xs text-zinc-400'>2+ years</p>
+                </div>
+            </div> */}
+
 
             <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
                 <img src={pythonLogo} alt='react-logo' className='w-10 h-10' />

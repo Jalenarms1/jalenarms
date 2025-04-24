@@ -39,10 +39,10 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
                     <p className="text-zinc-300 mt-5 font-light">Schedule a meeting to discuss my skills and experience in more detail. I look forward to connecting with you soon!</p>
 
                     <div className="flex items-center mt-5 gap-2">
-                        <a href='https://calendly.com/dev-test-jalen' target='_blank' className=' bg-yellow-400 active:bg-yellow-500 rounded-lg text-black font-semibold p-2 px-4 flex items-center gap-2'>
+                        {/* <a href='https://calendly.com/dev-test-jalen' target='_blank' className=' bg-yellow-400 active:bg-yellow-500 rounded-lg text-black font-semibold p-2 px-4 flex items-center gap-2'>
                             <CiCalendar />
                             <p>Schedule</p>
-                        </a>
+                        </a> */}
                         <button onClick={downloadResume} className=' border border-zinc-400 active:bg-zinc-800 rounded-lg  font-semibold p-2 px-4 flex items-center gap-2 text-zinc-400'>
                             <FaFileArrowDown />
                             <p>Download CV</p>
