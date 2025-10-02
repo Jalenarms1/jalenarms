@@ -11,7 +11,9 @@ import htmlLogo from "../assets/html.webp"
 import javascriptLogo from "../assets/javascript.webp"
 import swiftui from "../assets/swiftui.png"
 import swift from "../assets/swift.svg"
-import nextjs from "../assets/nextjs.png"
+import csharpLog from "../assets/csharp-logo.png"
+import dotnetLogo from "../assets/dotnet-logo.svg"
+import blazorLogo from "../assets/blazorLogo.png"
 import { motion, useInView } from "framer-motion"
 
 
@@ -40,18 +42,25 @@ const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
 
         </div>
         <div className="md:flex items-center grid grid-cols-2 sm:gap-2 gap-5 flex-wrap">
+            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
+                <img src={csharpLog} alt='react-logo' className='w-10 object-contain h-10' />
+                <div className="flex flex-col ">
+                    <p>C#</p>
+                    <p className='text-xs text-zinc-400'>3+ years</p>
+                </div>
+            </div>
+            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-2 sm:w-60 w-full">
+                <img src={dotnetLogo} alt='react-logo' className='w-12 h-10' />
+                <div className="flex flex-col ">
+                    <p>.NET</p>
+                    <p className='text-xs text-zinc-400'>3+ years</p>
+                </div>
+            </div>
             <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-2 sm:w-60 w-full">
                 <img src={reactLogo} alt='react-logo' className='w-10 h-10' />
                 <div className="flex flex-col ">
                     <p>React.js</p>
                     <p className='text-xs text-zinc-400'>3+ years</p>
-                </div>
-            </div>
-            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-2 sm:w-60 w-full">
-                <img src={goLogo} alt='react-logo' className='w-12 h-10' />
-                <div className="flex flex-col ">
-                    <p>Golang</p>
-                    <p className='text-xs text-zinc-400'>2+ years</p>
                 </div>
             </div>
             {/* <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
@@ -62,6 +71,13 @@ const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
                 </div>
             </div> */}
 
+            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
+                <img src={blazorLogo} alt='react-logo' className='w-10 object-contain h-10' />
+                <div className="flex flex-col ">
+                    <p>Blazor</p>
+                    <p className='text-xs text-zinc-400'>2+ years</p>
+                </div>
+            </div>
 
             <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
                 <img src={pythonLogo} alt='react-logo' className='w-10 h-10' />
@@ -78,23 +94,9 @@ const TechnologiesAndSkills = ({onIsInView}: {onIsInView: () => void}) => {
                 </div>
             </div>
             <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
-                <img src={nodeLogo} alt='react-logo' className='w-10 object-contain h-10' />
-                <div className="flex flex-col ">
-                    <p>Node.js</p>
-                    <p className='text-xs text-zinc-400'>3+ years</p>
-                </div>
-            </div>
-            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
                 <img src={tailwindLogo} alt='react-logo' className='w-10 object-contain h-10' />
                 <div className="flex flex-col ">
                     <p>Tailwind CSS</p>
-                    <p className='text-xs text-zinc-400'>3+ years</p>
-                </div>
-            </div>
-            <div className="flex items-center bg-zinc-950 p-2 rounded-md gap-3 sm:w-60 w-full">
-                <img src={cssLogo} alt='react-logo' className='w-10 object-contain h-10' />
-                <div className="flex flex-col ">
-                    <p>CSS</p>
                     <p className='text-xs text-zinc-400'>3+ years</p>
                 </div>
             </div>

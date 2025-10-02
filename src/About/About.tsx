@@ -34,7 +34,7 @@ const About = ({onIsInView, onDownloadResume}: {onIsInView: () => void, onDownlo
 
                     <p className="md:text-4xl lg:text-5xl xl:text-6xl text-3xl font-semibold text-white">Fullstack</p>
                     <p className="text-cyan-400 md:text-4xl lg:text-5xl xl:text-6xl text-3xl font-semibold">Software Developer</p>
-                    <p className="text-zinc-300  mt-5 font-light font-app">Hi, I’m Jalen Arms—-a fullstack software developer experienced in building web and mobile applications. My strengths are designing and integrating APIs, building intuitive layouts and managing application state through user interaction.</p>
+                    <p className="text-zinc-300  mt-5 font-light font-app">Hi, I’m Jalen Arms—-a fullstack software developer experienced in building web and mobile applications. I'm currently using C#/.NET for API development, Blazor WASM and React.js for client-side UI and interactivity, and a SQL Server database</p>
 
               <p className="text-zinc-300  mt-5 font-light font-app">I also specialize in data engineering—-designing automated ETL pipelines that gather data from multiple sources, standardize it, and put it in its destination.</p>
                     <div className="flex items-center mt-5 gap-2">
