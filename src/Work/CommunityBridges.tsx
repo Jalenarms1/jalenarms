@@ -1,8 +1,10 @@
 import React from 'react'
 import sqlLogo from "../assets/sql1.png"
-import nodeLogo from "../assets/nodejs.png"
 import reactLogo from "../assets/react.svg"
+import csharpLogo from "../assets/csharp-logo.png"
 import pythonLogo from "../assets/python.webp"
+import dotnetLogo from "../assets/dotnet-logo.svg"
+import blazorLogo from "../assets/blazorLogo.png"
 
 
 const CommunityBridges = () => {
@@ -13,30 +15,39 @@ const CommunityBridges = () => {
           <div className="flex md:flex-row flex-col md:items-center md:gap-2">
             <p className='font-semibold text-white text-xl'>Community Bridges Inc.</p>
             <div className="flex items-center gap-2">
-              <img src={pythonLogo} alt='' className='w-5 h-5 rounded-sm' />
+              <img src={csharpLogo} alt='' className='w-7 h-7 rounded-sm' />
+              <img src={dotnetLogo} alt='' className='w-6 h-6 rounded-sm' />
+              <img src={blazorLogo} alt='' className='w-5 h-5 rounded-sm' />
+              <img src={reactLogo} alt='' className='w-5 h-5 rounded-sm' />
               <img src={sqlLogo} alt='' className='w-6 h-6 rounded-sm' />
-              <img src={reactLogo} alt='' className='w-6 h-6 rounded-sm' />
-              <img src={nodeLogo} alt='' className='w-6 h-6 rounded-sm' />
 
             </div>
 
           </div>
-          <p className='text-sm text-cyan-400'>Data Engineer</p>
+          <p className='text-sm text-cyan-400'>Software Engineer/Data Engineer</p>
           <div className="flex flex-col mt-8 gap-5">
             <div className="flex items-start gap-4">
-              <img src={pythonLogo} alt='' className='w-5 h-5 rounded-sm' />
+              <img src={dotnetLogo} alt='' className='w-5 h-5 rounded-sm' />
               <div className="flex flex-col gap-4">
                 <div className="flex items-start gap-4">
                   <p>-</p>
-                  <p className='text-sm text-zinc-300'>Automate script execution using Windows Task Scheduler for efficient and timely operations</p>
+                  <p className='text-sm text-zinc-300'>Build HIPAA compliant web applications that incorporate role-based access control and field history auditing</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <p>-</p>
-                  <p className='text-sm text-zinc-300'>Process and analyze Excel files with the Pandas library, seamlessly importing data into the database</p>
+                  <p className='text-sm text-zinc-300'>Build and maintain internal APIs to communicate with various in-house-client applications</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <p>-</p>
-                  <p className='text-sm text-zinc-300'>Manage secure file transfers through inbound and outbound SFTP automation, ensuring efficient distribution</p>
+                  <p className='text-sm text-zinc-300'>Design reusable frameworks that compliment business needs</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <p>-</p>
+                  <p className='text-sm text-zinc-300'>Build client applications using Blazor WASM or React.js that staff utilize to do their job</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <p>-</p>
+                  <p className='text-sm text-zinc-300'>Responsible for IIS deployment of client and server applications</p>
                 </div>
               </div>
             </div>
@@ -57,40 +68,8 @@ const CommunityBridges = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <img src={reactLogo} alt='' className='w-5 h-5 rounded-sm' />
-              <div className="flex flex-col gap-4">
-                <div className="flex items-start gap-4">
-                  <p>-</p>
-                  <p className='text-sm text-zinc-300'>Develop dynamic client-side web pages for seamless integration within embedded iFrames in the EHR system</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <p>-</p>
-                  <p className='text-sm text-zinc-300'>Fetch and display data efficiently from internal APIs, ensuring an intuitive and user-friendly interface</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <p>-</p>
-                  <p className='text-sm text-zinc-300'>Optimize performance by leveraging virtual tables for smooth rendering of large datasets</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <img src={nodeLogo} alt='' className='w-5 h-5 rounded-sm' />
-              <div className="flex flex-col gap-4">
-                <div className="flex items-start gap-4">
-                  <p>-</p>
-                  <p className='text-sm text-zinc-300'>Developed and deployed an Express-based HTTP server on an IIS server for seamless application hosting</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <p>-</p>
-                  <p className='text-sm text-zinc-300'>Designed and optimized API routes to enhance client-server communication, incorporating data streaming for improved performance and faster time-to-screen</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <p>-</p>
-                  <p className='text-sm text-zinc-300'>Implemented authentication based on a request IP address having a matching record in a specific database table</p>
-                </div>
-              </div>
-            </div>
+        
+  
           </div>
         </div>
       </div>

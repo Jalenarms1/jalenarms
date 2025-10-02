@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 .app-font {
-  font-family: "Nunito Sans", serif;}
+  font-family: "Nunito Sans", serif;
+}
 
 html {
   scroll-snap-type: y mandatory;

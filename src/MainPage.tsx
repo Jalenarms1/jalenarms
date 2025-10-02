@@ -15,6 +15,9 @@ import Reviews from "./Reviews/Reviews";
 import Contact from "./Contact/Contact";
 import { Sidebar } from "./Sidebar";
 import { downloadResume } from "./utils";
+import startHealthHome from "./assets/starhome.png"
+import startHealthDir from "./assets/stardir.png"
+import StarHealth from "./Work/StarHealth";
 
 export type AppView = "About" | "Work" | "Reviews" | "Contact"
 
@@ -95,7 +98,18 @@ const MainPage = () => {
         <div ref={ref} className="md:h-10 w-full"></div>
         <About onIsInView={() => setCurrentView("About")} onDownloadResume={downloadResume}  />
         <TechnologiesAndSkills onIsInView={() => setCurrentView("Work")} />
-        <div ref={workRef} className="h-20 w-full"></div>
+        {/* <div className="min-h-screen w-full flex items-center p-16 px-40 gap-20">
+          <div className="flex gap-10">
+            <div className="flex flex-col gap-2">
+              <img src={startHealthHome} alt="" className="w-[60vw] shadow-sm shadow-gray-800" />
+              <img src={startHealthDir} alt="" className="w-[60vw] shadow-sm shadow-gray-800" />
+
+            </div>
+            <StarHealth />
+
+          </div>
+        </div>
+        <div ref={workRef} className="h-20 w-full"></div> */}
         <Work onIsInView={() => setCurrentView("Work")} />
 
       </div>
